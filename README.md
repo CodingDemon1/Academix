@@ -1,1 +1,1 @@
-# EdTech-Nexus
+# Academix
