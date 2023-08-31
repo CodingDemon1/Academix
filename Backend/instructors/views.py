@@ -1,12 +1,13 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Instructor
+import json
 
 
 @csrf_exempt
 def add_instructor(request):
     if request.method == "POST":
-        data = request.POST
+        data = json.loads(request.body)
         instructor = Instructor(
             name=data["name"],
             gender=data["gender"],
@@ -14,6 +15,7 @@ def add_instructor(request):
             department=data["department"],
             email=data["email"],
             contact_number=data["contact_number"],
+            password=data["password"],
         )
         instructor.save()
         return JsonResponse(

@@ -17,6 +17,7 @@ class Instructor(models.Model):
     department = models.TextField()
     email = models.EmailField(unique=True)
     contact_number = models.TextField()
+    password = models.CharField(max_length=128, blank=True)
 
     def __str__(self):
         return self.name
