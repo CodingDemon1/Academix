@@ -21,4 +21,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/students/", include("students.urls")),
     path("api/instructors/", include("instructors.urls")),
+    path("api/courses/", include("course.urls")),
+    path("api/enrollments/", include("enrollment.urls")),
+    path("api/submissions/", include("submisstion.urls")),
+    path("api/assignments/", include("assignment.urls")),
+    path("api/departments/", include("department.urls")),
+    path("api/announcements/", include("announcement.urls")),
 ]

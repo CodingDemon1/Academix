@@ -5,6 +5,7 @@ app_name = "student"
 
 urlpatterns = [
     # ...
+    path("login/", views.instructor_login_view, name="instructor-login"),
     path("add/", views.add_instructor, name="add_instructor"),
     path("", views.get_instructors, name="get_instructors"),
     path(

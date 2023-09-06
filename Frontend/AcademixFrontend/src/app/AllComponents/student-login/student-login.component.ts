@@ -54,7 +54,8 @@ export class StudentLoginComponent implements OnInit{
           alert(res.message)
           if(res.response){
             // this.userService.setUserRole("student")
-            localStorage.setItem("loggedUserRole","student")
+            localStorage.setItem("user",JSON.stringify(res.user))
+            localStorage.setItem("token",JSON.stringify(res.token))
 
             this.router.navigate(['/student-dashboard'])
           }
@@ -88,7 +89,7 @@ export class StudentLoginComponent implements OnInit{
           
           if(res.response){
             
-            localStorage.setItem("user",JSON.stringify(res.user))
+            alert(res.message)
             
             let currentUrl = this.router.url;
             

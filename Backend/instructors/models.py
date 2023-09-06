@@ -18,6 +18,7 @@ class Instructor(models.Model):
     email = models.EmailField(unique=True)
     contact_number = models.TextField()
     password = models.CharField(max_length=128, blank=True)
+    isAuthorized = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

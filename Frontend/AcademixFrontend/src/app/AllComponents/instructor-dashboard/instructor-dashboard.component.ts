@@ -16,7 +16,10 @@ export class InstructorDashboardComponent implements OnInit{
 
     ngOnInit(): void {
       this.user = localStorage.getItem("user"); 
-      this.loggedInUser = this.authService.getUser()
+      if(this.authService.isLoggedIn()){
+        this.loggedInUser = this.authService.getUser()
+        
+      }
     }
 
 }

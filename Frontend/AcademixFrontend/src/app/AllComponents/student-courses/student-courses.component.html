@@ -1,1 +1,19 @@
-<p>student-courses works!</p>
+<!-- student-course.component.html -->
+<div class="container">
+    <h1 class="text-3xl font-semibold mb-4">Available Courses</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+        <div *ngFor="let course of courses" class="course-card">
+            <div class="bg-white shadow-lg rounded-lg p-4">
+                <h2 class="text-xl font-semibold">{{ course.course_name }}</h2>
+                <p class="text-gray-600">{{ course.description }}</p>
+                <p class="text-gray-600"> {{ course.department }}</p>
+                <div class="mt-4">
+                    <!-- Enroll Button -->
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        (click)="enrollCourse(course.id)">Enroll</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

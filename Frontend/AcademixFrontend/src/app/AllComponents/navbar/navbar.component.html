@@ -37,6 +37,13 @@
                     <a href="#"
                         class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent hover:bg-gray-100 md:border-0 hover:text-gray-700 md:p-2 dark:text-gray-200 md:dark:text-blue-500">Contact</a>
                 </li>
+
+                <li *ngIf="isLoggedIn" (click)="logOutUser()">
+                    <a
+                        class="block py-2 pl-3 pr-4 text-white rounded md:bg-red-600 hover:bg-red-700 md:border-0 md:p-2 dark:text-gray-200 md:dark:text-blue-500 cursor-pointer">
+                        {{ loggedInUser }} / Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

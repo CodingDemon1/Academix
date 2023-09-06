@@ -13,6 +13,7 @@ import { StudentDashboardComponent } from './AllComponents/student-dashboard/stu
 import { InstructorProfileComponent } from './AllComponents/instructor-profile/instructor-profile.component';
 import { StudentProfileComponent } from './AllComponents/student-profile/student-profile.component';
 import { SingleAssignmentComponent } from './AllComponents/single-assignment/single-assignment.component';
+import { StudentEnrollmentsComponent } from './AllComponents/student-enrollments/student-enrollments.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
       { path: 'student', component: StudentCoursesComponent, pathMatch:"full" },
       { path: 'student/assignments', component: StudentAssignmentsComponent, pathMatch:"full"  },
       { path: 'student/profile', component: StudentProfileComponent, pathMatch:"full" },
+      { path: 'student/enrollments', component: StudentEnrollmentsComponent, pathMatch:"full" },
     ]
   },
   

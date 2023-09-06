@@ -22,6 +22,7 @@ import { CourseUpdateModalComponent } from './AllComponents/course-update-modal/
 import { SingleAssignmentComponent } from './AllComponents/single-assignment/single-assignment.component';
 import { AddAssignmentModalComponent } from './AllComponents/add-assignment-modal/add-assignment-modal.component';
 import { UpdateAssignmentModalComponent } from './AllComponents/update-assignment-modal/update-assignment-modal.component';
+import { StudentEnrollmentsComponent } from './AllComponents/student-enrollments/student-enrollments.component';
 
 
 
@@ -46,6 +47,7 @@ import { UpdateAssignmentModalComponent } from './AllComponents/update-assignmen
     SingleAssignmentComponent,
     AddAssignmentModalComponent,
     UpdateAssignmentModalComponent,
+    StudentEnrollmentsComponent,
 
   ],
   imports: [

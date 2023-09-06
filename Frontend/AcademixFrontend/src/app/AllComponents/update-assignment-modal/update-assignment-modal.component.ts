@@ -9,7 +9,7 @@ import { AssignmentService } from 'src/app/i-assignment.service';
   styleUrls: ['./update-assignment-modal.component.css']
 })
 export class UpdateAssignmentModalComponent {
-  @Input() modalVisible: boolean = false;
+
   @Input() currentAssignment: any;
   
 
@@ -17,11 +17,11 @@ export class UpdateAssignmentModalComponent {
 
   updateAssignment() {
     // Validate and save the updated assignment data
-      this.instAssn.updateAssignment(this.currentAssignment.id,this.currentAssignment)
+    console.log(this.currentAssignment.id)
+      this.instAssn.updateAssignment(this.currentAssignment,this.currentAssignment.id)
   }
 
   closeModal() {
-    this.modalVisible = false;
     // Emit an event to notify the parent component to close the modal
     this.instAssn.closeUpdateAssignmentModal()
   }

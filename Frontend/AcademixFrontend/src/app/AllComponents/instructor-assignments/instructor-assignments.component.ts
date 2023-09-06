@@ -84,6 +84,7 @@ export class InstructorAssignmentsComponent implements OnInit {
   }
 
   updateAssignment(assignment: iAssignment, assignmentId:number){
+    assignment['course_id'] = this.courseId
     this.assignmentService.updateAssignment(assignmentId,assignment).subscribe(
       (res:any)=>{
         if(res.response){

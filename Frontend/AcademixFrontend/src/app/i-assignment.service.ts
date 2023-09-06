@@ -34,7 +34,7 @@ export class AssignmentService {
   // Update an existing assignment
   updateAssignment(assignmentId: number, updatedAssignment: any): Observable<iAssignment> {
     const url = `${this.apiUrl}/assignments/update/${assignmentId}/`; // Adjust the endpoint accordingly
-    return this.http.put<iAssignment>(url, updatedAssignment);
+    return this.http.patch<iAssignment>(url, updatedAssignment);
   }
 
   // Delete an assignment by assignmentId
