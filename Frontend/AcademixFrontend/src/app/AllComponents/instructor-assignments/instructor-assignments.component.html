@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- Add Assignment Button -->
+    <div class="flex justify-end mb-5">
+        <button (click)="openAddAssignmentModal()"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-2">
+            Add Assignment
+        </button>
+    </div>
+    <app-add-assignment-modal *ngIf="addAssignmentModalVisible"></app-add-assignment-modal>
+    <!-- Render Assignments -->
+    <h1 class="text-center text-3xl underline font-extrabold mb-5">Assignments for Course {{ courseId }}</h1>
+
+    <!-- Assignment Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Replace this with a loop to render assignment cards -->
+        <div *ngFor="let assignment of assignments" class="assignment-card">
+            <div class="bg-white shadow-lg rounded-lg p-4">
+                <h2 class="text-xl font-semibold">{{ assignment.title }}</h2>
+                <p class="text-gray-600">{{ assignment.description }}</p>
+                <p class="text-gray-600">Due Date: {{ assignment.dueDate }}</p>
+                <div class="mt-4">
+                    <!-- Update Assignment Button -->
+                    <button (click)="openUpdateAssignmentModal()"
+                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                        Update
+                    </button>
+                    <app-update-assignment-modal [currentAssignment]="assignment"
+                        *ngIf="updateAssignmentModalVisible"></app-update-assignment-modal>
+                    <!-- Delete Assignment Button -->
+                    <button (click)="deleteAssignment(assignment.id)"
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- End of Assignment Card -->
+    </div>
+</div>

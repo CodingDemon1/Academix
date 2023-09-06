@@ -1,0 +1,34 @@
+<div *ngIf="modalVisible" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="modal w-full h-full bg-black opacity-60 absolute top-0"></div>
+    <div class="modal-content w-1/3 bg-white p-6 rounded-lg shadow-lg z-10 relative">
+        <h2 class="text-2xl font-bold mb-4">Update Assignment</h2>
+        <form (ngSubmit)="updateAssignment()" class="space-y-4">
+            <div>
+                <label for="assignmentTitle" class="block text-gray-600 font-semibold">Assignment Title</label>
+                <input type="text" id="assignmentTitle" name="assignmentTitle" [(ngModel)]="currentAssignment.title"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                    required>
+            </div>
+            <div>
+                <label for="assignmentDescription" class="block text-gray-600 font-semibold">Assignment
+                    Description</label>
+                <textarea id="assignmentDescription" name="assignmentDescription"
+                    [(ngModel)]="currentAssignment.description"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                    required></textarea>
+            </div>
+            <div>
+                <label for="dueDate" class="block text-gray-600 font-semibold">Due Date</label>
+                <input type="date" id="dueDate" name="dueDate" [(ngModel)]="currentAssignment.due_date"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                    required>
+            </div>
+            <div class="mt-6 text-right">
+                <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-lg mr-2"
+                    (click)="updateAssignment()">Update Assignment</button>
+                <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-lg"
+                    (click)="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container ">
+    <!-- Add Course Button -->
+    <div class="flex justify-end mb-5">
+        <button (click)="openModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-2">
+            Add Course
+        </button>
+    </div>
+
+
+    <app-course-add-modal *ngIf="modalVisible"></app-course-add-modal>
+
+
+
+    <!-- Render Courses -->
+    <h1 class="text-center text-3xl underline font-extrabold mb-5">Your Courses</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Replace this with a loop to render course cards -->
+        <div *ngFor="let course of courses" class="course-card cursor-pointer  "
+            (click)="navigateToAssignments(course.id)">
+            <div class="bg-white shadow-lg rounded-lg p-4 hover:bg-slate-300 hover:">
+                <h2 class="text-xl font-semibold">{{course.course_name}}</h2>
+                <p class="text-gray-600">{{course.description}}</p>
+                <p class="text-gray-600">{{course.department}}</p>
+                <div class="mt-4">
+                    <!-- Update Course Button -->
+                    <button (click)="openUpdateModal()"
+                        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                        Update
+                    </button>
+                    <app-course-update-modal [currentCourse]="course"
+                        *ngIf="updateModalVisible"></app-course-update-modal>
+
+                    <!-- Delete Course Button -->
+                    <button (click)="deleteCourse(course.id)"
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- End of Course Card -->
+    </div>
+</div>

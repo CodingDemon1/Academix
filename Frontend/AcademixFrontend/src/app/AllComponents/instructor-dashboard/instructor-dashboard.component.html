@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="container flex flex-col md:flex-row h-fit bg-gray-100">
+        <!-- Sidebar -->
+        <div class=" md:w-1/5 bg-gray-800 text-white p-4">
+            <h1 class="text-xl font-bold">Instructor Dashboard</h1>
+            <ul class="flex flex-col md:flex:col space-y-4 mt-5  justify-normal">
+                <li>
+                    <a routerLink="instructor/"
+                        class="py-2 px-4 hover:bg-gray-600 rounded transition duration-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fill-rule="evenodd"
+                                d="M2 5a1 1 0 011-1h14a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V5zm1-2a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V6a3 3 0 00-3-3H3z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Courses
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="instructor/assignments"
+                        class="py-2 px-4 hover:bg-gray-600 rounded transition duration-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M2 5a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-1 1H3a1 1 0 01-1-1V5zm1 2a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2H3z" />
+                        </svg>
+                        Assignments
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="instructor/profile"
+                        class="py-2 px-4 self-end hover:bg-gray-600 rounded transition duration-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M10 12a2 2 0 100-4 2 2 0 000 4zm0 2a6 6 0 100-12 6 6 0 000 12zm-6 2a8 8 0 1116 0h-2a6 6 0 10-12 0H4z" />
+                        </svg>
+                        Profile
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="w-4/5 p-4 ">
+            <!-- Use Angular Router Outlet to render child components -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
