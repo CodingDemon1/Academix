@@ -1,3 +1,3 @@
 export const env = {
-    apiURL: "http://127.0.0.1:8000/api",
+    apiURL: "https://academix-backend11.onrender.com/api",
 }
